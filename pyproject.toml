@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "open-bridge"
+name = "openrouter-mcp-bridge"
 version = "1.0.0"
 description = "Lightweight MCP server bridging Claude Code to OpenRouter API"
 readme = "README.md"
@@ -31,7 +31,7 @@ dependencies = [
 ]
 
 [project.scripts]
-open-bridge = "src.mcp_server:main"
+openrouter-mcp-bridge = "src.mcp_server:main"
 
 [project.urls]
 Homepage = "https://github.com/htooayelwinict/open-bridge"
