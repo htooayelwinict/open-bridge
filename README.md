@@ -144,7 +144,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🙏 Credits
 
-Originally forked from [shelakh/codex-bridge](https://github.com/shelakh/codex-bridge).
+Originally forked from [shelakh/codex-bridge](https://github.com/eLyiN/codex-bridge/tree/main).
 
 ---
 
