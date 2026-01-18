@@ -9,7 +9,8 @@ description = "Lightweight MCP server bridging Claude Code to OpenRouter API"
 readme = "README.md"
 license = "MIT"
 authors = [
-    {name = "Shelakh", email = "info@shelakh.com"}
+    {name = "htooayelwinict", email = "htooayelwinict@gmail.com"},
+    {name = "Shelakh (original author)", email = "info@shelakh.com"}
 ]
 keywords = ["mcp", "openrouter", "ai", "coding", "assistant", "async", "http"]
 classifiers = [

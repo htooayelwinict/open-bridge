@@ -3,7 +3,7 @@
 OpenRouter MCP Server - Simple API Bridge
 Version 1.0.0
 A minimal MCP server to interface with OpenRouter API.
-Created by @shelakh/elyin
+Created by @htooayelwinict (forked from @shelakh/codex-bridge)
 
 Following Carmack's principle: "Simplicity is prerequisite for reliability"
 Following Torvalds' principle: "Good taste in code - knowing what NOT to write"

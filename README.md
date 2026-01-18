@@ -73,29 +73,29 @@ claude mcp add open-bridge -s user \
 
 | Tool | Description |
 |------|-------------|
-| `consult_codex` | Direct API query with structured output |
-| `consult_codex_with_stdin` | Pipe file content for analysis |
-| `consult_codex_batch` | Multiple concurrent queries |
+| `consult_openrouter` | Direct API query with structured output |
+| `consult_openrouter_with_stdin` | Pipe file content for analysis |
+| `consult_openrouter_batch` | Multiple concurrent queries |
 
 ## 📋 Usage Examples
 
 ```python
 # Basic query
-consult_codex(
+consult_openrouter(
     query="What authentication patterns are used in this project?",
     directory="/path/to/project",
     format="json"
 )
 
 # File analysis
-consult_codex_with_stdin(
+consult_openrouter_with_stdin(
     stdin_content=open("src/auth.py").read(),
     prompt="Review this file for security issues",
     directory="/path/to/project"
 )
 
 # Batch processing
-consult_codex_batch(
+consult_openrouter_batch(
     queries=[
         {"query": "Analyze authentication patterns"},
         {"query": "Review database implementations"}
