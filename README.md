@@ -1,5 +1,6 @@
-# Open Bridge
+# OpenRouter MCP Bridge
 
+[![PyPI version](https://badge.fury.io/py/openrouter-mcp-bridge.svg)](https://pypi.org/project/openrouter-mcp-bridge/)
 ![OpenRouter API](https://img.shields.io/badge/OpenRouter-API-blue.svg)
 
 A lightweight MCP (Model Context Protocol) server that enables AI coding assistants to interact with OpenRouter API. Works with Claude Code, Cursor, VS Code, and other MCP-compatible clients.
@@ -31,22 +32,31 @@ A lightweight MCP (Model Context Protocol) server that enables AI coding assista
 
 ### Installation
 
+**From PyPI:**
+```bash
+pip install openrouter-mcp-bridge
+```
+
+**Using uvx (recommended for MCP servers):**
+```bash
+uvx openrouter-mcp-bridge
+```
+
 **Local Development:**
 ```bash
+# Clone the repository
+git clone https://github.com/htooayelwinict/open-bridge.git
+cd open-bridge
+
 # Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Install dependencies
+# Install in development mode
 pip install -e .
 
 # Run directly
 python -m src
-```
-
-**Using uvx (from local directory):**
-```bash
-uvx --from /path/to/open-bridge open-bridge
 ```
 
 ## ⚙️ Configuration
@@ -59,14 +69,31 @@ uvx --from /path/to/open-bridge open-bridge
 | `OPENROUTER_MODEL` | No | `openai/gpt-4o` | Model to use |
 | `OPENROUTER_TIMEOUT` | No | `90` | Request timeout (seconds) |
 
-### Example Configuration (Claude Code)
+### Claude Code Configuration
 
 ```bash
-# Add to Claude Code with local installation
-claude mcp add open-bridge -s user \
+# Add to Claude Code with uvx (recommended)
+claude mcp add openrouter-mcp-bridge -s user \
   --env OPENROUTER_API_KEY=sk-or-... \
   --env OPENROUTER_MODEL=anthropic/claude-3.5-sonnet \
-  -- python -m $(pwd)/src
+  -- uvx openrouter-mcp-bridge
+```
+
+Or add to `~/.claude.json`:
+```json
+{
+  "mcpServers": {
+    "openrouter-mcp-bridge": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["openrouter-mcp-bridge"],
+      "env": {
+        "OPENROUTER_API_KEY": "sk-or-...",
+        "OPENROUTER_MODEL": "anthropic/claude-3.5-sonnet"
+      }
+    }
+  }
+}
 ```
 
 ## 🛠️ Available Tools
@@ -114,6 +141,10 @@ consult_openrouter_batch(
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🙏 Credits
+
+Originally forked from [shelakh/codex-bridge](https://github.com/shelakh/codex-bridge).
 
 ---
 
